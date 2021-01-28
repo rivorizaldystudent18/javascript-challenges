@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <!-- 
+-   questions from obj
+-   select answer
+-   at the end show score -->
+    <div class="container">
+      <div class="wrapper-answer-question">
+        <h3 id="question"></h3>
+        <!-- <div class="wrapper-answer"> -->
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="aR" />
+            <label for="aR" id="a"></label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="bR" />
+            <label for="bR" id="b"></label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="cR" />
+            <label for="cR" id="c"></label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="dR" />
+            <label for="dR" id="d"></label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="eR" />
+            <label for="eR" id="e"></label>
+          </li>
+        </ul>
+        <!-- </div> -->
+      </div>
+      <button id="submit">Submit</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
