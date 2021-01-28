@@ -70,9 +70,7 @@ let evaluateAnswer = () => {
         let selector = `label[for=${radio[index].id}]`;
         let label = document.querySelector(selector);
 
-        if (label.textContent === question.answer) {
-          initialScore++;
-        }
+        label.textContent === question.answer ? initialScore++ : initialScore;
       }
     }
   }
