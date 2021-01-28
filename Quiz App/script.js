@@ -57,49 +57,61 @@ let loadQuestion = () => {
     c.innerHTML = question.c;
     d.innerHTML = question.d;
     e.innerHTML = question.e;
-  } else if (initialQuestion === questions.length) {
-    let ul = document.querySelector("ul");
-    ul.style.display = "none";
-
-    let questionContainer = document.getElementById("question");
-    questionContainer.innerHTML = "Your Score is : " + initialScore;
   }
 };
 
 let evaluateAnswer = () => {
   let question = questions[initialQuestion];
-  let radio = document.getElementsByName("answer");
+  if (initialQuestion < questions.length) {
+    let radio = document.getElementsByName("answer");
 
-  for (let index = 0; index < radio.length; index++) {
-    if (radio[index].checked) {
-      let selector = `label[for=${radio[index].id}]`;
-      let label = document.querySelector(selector);
+    for (let index = 0; index < radio.length; index++) {
+      if (radio[index].checked) {
+        let selector = `label[for=${radio[index].id}]`;
+        let label = document.querySelector(selector);
 
-      if (label.textContent === question.answer) {
-        initialScore++;
+        if (label.textContent === question.answer) {
+          initialScore++;
+        }
       }
     }
   }
+};
+
+let loadScore = () => {
+  let ul = document.querySelector("ul");
+  ul.hidden = true;
+
+  let questionContainer = document.getElementById("question");
+  questionContainer.innerHTML = "Your Score is : " + initialScore;
+
+  let button = document.querySelector("button");
+  button.textContent = "Reset";
+};
+
+let reset = () => {
+  initialQuestion = 0;
+  initialScore = 0;
+  let ul = document.querySelector("ul");
+  ul.hidden = false;
+  loadQuestion();
+
+  let button = document.querySelector("button");
+  button.textContent = "Submit";
 };
 
 loadQuestion();
 
 let button = document.getElementById("submit");
 
-button.addEventListener("click", () => {
-  if (initialQuestion < questions.length) {
-    evaluateAnswer();
+button.addEventListener("click", (event) => {
+  evaluateAnswer();
+  if (event.target.textContent === "Reset") {
+    reset();
+  } else if (initialQuestion < questions.length) {
     initialQuestion++;
     loadQuestion();
+  } else if (initialQuestion >= questions.length) {
+    loadScore();
   }
 });
-
-let buttons = document.querySelectorAll("button");
-
-buttons.forEach((el) => {
-  el.addEventListener("click", (event) => {
-    console.log(event.target.textContent);
-  });
-});
-
-console.log(initialQuestion);
