@@ -103,10 +103,10 @@ loadQuestion();
 let button = document.getElementById("submit");
 
 button.addEventListener("click", (event) => {
-  evaluateAnswer();
   if (event.target.textContent === "Reset") {
     reset();
   } else if (initialQuestion < questions.length) {
+    evaluateAnswer();
     initialQuestion++;
     loadQuestion();
   } else if (initialQuestion >= questions.length) {
