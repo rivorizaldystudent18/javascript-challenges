@@ -1,0 +1,137 @@
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+#mobile-container {
+  background-color: white;
+  width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#navigation-bar {
+  padding: 16px 0;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0px 1px 7px -4px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+#search {
+  border: none;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+#meals-header {
+  padding: 1rem;
+  text-align: center;
+  background-color: #f0f0f5;
+}
+
+#meals-list {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  /* overflow-x: scroll; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#meals-list li {
+  width: 85px;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+#meals-header ul li img {
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 70px;
+  width: 70px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#meals-header ul li span {
+  font-size: 0.8rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+#main-meals {
+  margin: 16px 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#main-meals .random {
+  position: absolute;
+  margin: 0;
+  top: 10px;
+  background-color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#main-meals-header {
+  position: relative;
+}
+
+#main-meals-header img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.meals-name {
+  margin: 0;
+}
+
+#main-meals-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.like-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.like-button i {
+  color: #979791;
+}
+
+.like-button i.active {
+  color: #ee2478;
+}
+
+.meals-item {
+  position: relative;
+}
+
+.item-delete {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  visibility: hidden;
+}
+
+.item-delete.active {
+  visibility: visible;
+  cursor: pointer;
+}
