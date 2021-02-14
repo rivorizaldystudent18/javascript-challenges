@@ -95,6 +95,25 @@ function addToFavorite() {
   addToFavoriteSection(favorite);
 }
 
+function selectLi() {
+  const li = document.querySelectorAll(".meals-item");
+  li.forEach((el) => {
+    el.addEventListener("mouseover", () => {
+      console.log("kena");
+      const icon = el.querySelector(".item-delete");
+      icon.classList.add("active");
+      icon.addEventListener("click", () => {
+        deleteFavorite(icon.getAttribute("data-meal"));
+      });
+    });
+
+    el.addEventListener("mouseleave", () => {
+      const icon = el.querySelector(".item-delete");
+      icon.classList.remove("active");
+    });
+  });
+}
+
 function removeFromFavorite() {
   removeFromFavoriteSection(likeButton.getAttribute("data-meals-name"));
   localStorage.removeItem("meal");
@@ -123,15 +142,20 @@ function removeFromFavoriteSection(mealsName) {
 function modifyFavoriteSection(favorites) {
   let li = "";
   favorites.forEach((element) => {
-    li += `<li>
+    li += `<li class="meals-item">
     <img
       src="${element.mealsImg}"
       alt=""
     /><span>${formatString(element.mealsName)}</span>
+    <i class="fas fa-times-circle item-delete" data-meal="${
+      element.mealsName
+    }"></i>
   </li>`;
   });
 
   ul.innerHTML = li;
+
+  selectLi();
 }
 
 function formatString(string) {
