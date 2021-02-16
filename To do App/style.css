@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  text-align: center;
+}
+
+#todo {
+  margin: 0;
+  width: 300px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+#todo::placeholder {
+  font-style: italic;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  border: 1px solid gray;
+  margin-bottom: 5px;
+  width: 300px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 5px 0;
+}
+
+.item-container {
+  display: inline-block;
+  width: 90%;
+}
+
+.item-delete {
+  display: inline-block;
+  width: 5%;
+}
+
+#information-text {
+  margin-right: 20px;
+}
+
+button {
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+button.active {
+  border: 1px solid black;
+}
+
+#item-filter {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+#item-filter.hide,
+.item-container.hide,
+.item-edit.hide,
+.item-delete.hide,
+.todo-item.hide,
+.todo-item-container.hide {
+  display: none;
+}
+
+.item-edit {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.todo-content.strikethrough {
+  text-decoration: line-through;
+}
