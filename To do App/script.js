@@ -258,7 +258,6 @@ function updateItemTotal(todoList) {
 
 function showItemFilter() {
   const todoList = JSON.parse(localStorage.getItem("todo"));
-  console.log("masuk", todoList);
   if (todoList.length <= 0) {
     itemFilter.classList.add("hide");
   } else {
@@ -355,6 +354,10 @@ function deleteTodoData(id) {
   const filteredData = todoList.filter((el) => el.id !== id);
 
   localStorage.setItem("todo", JSON.stringify(filteredData));
+
+  const todoListTotal = JSON.parse(localStorage.getItem("todo"));
+
+  updateItemTotal(getFilteredTodo(todoListTotal, "todo"));
 }
 
 function deleteTodoElement(listItem) {
