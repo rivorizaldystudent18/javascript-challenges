@@ -16,25 +16,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>To do App</title>
+    <title>Movies App</title>
   </head>
   <body>
-    <div id="container">
-      <h1 id="title">todos</h1>
-      <div class="info">
-        <p>Double-click to edit a todo</p>
-      </div>
-      <div id="todo-container">
-        <input type="text" id="todo" placeholder="What needs to be done?" />
-        <ul id="todo-list"></ul>
-        <div id="item-filter" class="hide">
-          <p id="information-text">3 items</p>
-          <button id="all">All</button>
-          <button id="active">Active</button>
-          <button id="completed">Completed</button>
-          <div></div>
-        </div>
-      </div>
+    <div class="container">
+      <nav class="navbar">
+        <input type="text" placeholder="Search movies" class="search-bar" />
+      </nav>
+
+      <div class="main-container"></div>
     </div>
     <script src="script.js"></script>
   </body>
